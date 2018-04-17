@@ -41,7 +41,7 @@ class LED_bulbList(APIView):
 class Exhaus_FanList(APIView):
     def get(self, request, format = None):
         exhaus_fan = Exhaus_Fan.objects.all()
-        serializer = exhaus_fanSerializer(exhaus_fan, many = True)
+        serializer = Exhaus_FanSerializer(exhaus_fan, many = True)
         return Response(serializer.data)
 
 class LED_bulb_pd(APIView):
